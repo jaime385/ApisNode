@@ -1,10 +1,11 @@
 const express = require('express');
-const app = express();
 const Datastore = require('nedb');
+const app = express();
 app.listen(3000, () => console.log('Listening at 3000'));
 app.use(express.static('Public'));
 app.use(express.json({limit: '1mb'}));
-const database = new Datastore('database.db');
+const database = new Datastore('database.db'); //Basic querying means you are looking for documents whose fields match the ones you specify. 
+// Let's say our datastore contains the following collection. (json file)
 database.loadDatabase();
 
 const dataUsa = {
@@ -45,6 +46,14 @@ app.get('/search/:country/:element', (request, response) => {
 const dataFrame = {};
 app.get('/api/:word/:num', (request, response) => {
     console.log(request.params);
-    dataFrame[request.params.word] = request.params.num;
-    response.send(dataFrame);
+    dataFrame["word"] = request.params.word;
+    dataFrame["num"] = request.params.num;
+    database.find({ country: "USA" }, function (err, docs) {
+        // docs is an array containing documents with the element country: "USA" inside them.
+        // If no document is found, docs is equal to []
+        response.send({
+            dataFrame,
+            docs
+        });
+      });
 });
