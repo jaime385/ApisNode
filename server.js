@@ -4,7 +4,7 @@ const Datastore = require('nedb');
 const app = express();
 app.listen(3000, () => console.log('Listening at 3000'));
 app.use(express.static('Public'));
-app.use(express.json({limit: '1mb'}));
+app.use(express.json({ limit: '1mb' }));
 const database = new Datastore('database.db'); //Basic querying means you are looking for documents whose fields match the ones you specify. 
 // Let's say our datastore contains the following collection. (json file)
 database.loadDatabase();
@@ -27,19 +27,19 @@ app.get('/search/:country/:element', (request, response) => {
     const data = request.params;
     const timestamp = Date.now();
     data.timestamp = timestamp;
-    database.insert(data); 
+    database.insert(data);
     if (data.country == "USA" && data.element == "all") {
         console.log(request.params);
         response.send({
             dataUsa,
-            "Time" :  Date(data.timestamp)
+            "Time": Date(data.timestamp)
         });
     } else {
         console.log(request.params);
         response.send({
             "status": "failed",
             "error": `${request.params.element} related to ${request.params.country} does not exists.`,
-            "Time" :  Date(data.timestamp)
+            "Time": Date(data.timestamp)
         });
     }
 });
@@ -56,7 +56,7 @@ app.get('/api/:word/:num', (request, response) => {
             dataFrame,
             docs
         });
-      });
+    });
 });
 
 app.get('/ipCountry/:country', async (request, response) => {
@@ -64,6 +64,11 @@ app.get('/ipCountry/:country', async (request, response) => {
     console.log(`The country is: ${country}`);
     const dataCountry = await fetch(`https://coronavirus-19-api.herokuapp.com/countries/${country}`);
     const dataReceived = await dataCountry.json();
-    database.insert(dataReceived); 
-    response.json(dataReceived);
+    const timestamp = Date.now();
+    database.insert({ dataReceived, time: (timestamp) }, function (err, newDoc) {
+        //console.log(newDoc);
+    });
+    const dateNow = database.find({ "dataReceived.country": "Costa Rica" }, function (err, docs) {
+        response.json(docs);
+    });
 });
