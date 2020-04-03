@@ -8,14 +8,11 @@ async function ipData() {
     console.log(responseFromServer);
     document.getElementById('paragraph1').textContent = countryJson.country_name;
     for (item in responseFromServer) {
-        console.log(`Hola ${item}`);
         const time = document.createElement(`div`);
         time.setAttribute('id', `div${item}`);
-        const newDate = new Date(responseFromServer[item].time);
-        const stringHour = newDate;
-        time.textContent = stringHour;
+        const newDate = new Date(responseFromServer[item].dataReceived.time);
+        time.textContent = newDate;
         const divTimes = document.getElementById('times');
         divTimes.append(time);
-        console.log(newDate);
     }
 }
