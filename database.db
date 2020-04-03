@@ -1,11 +1,2 @@
-{"country":"USA","element":"all","timestamp":1585847695613,"_id":"6wfBE9g8Ou0FQpDn"}
-{"country":"USA","element":"all","timestamp":1585847349994,"_id":"NozVF2U0Shz6bAoQ"}
-{"country":"USA","element":"al","timestamp":1585847423430,"_id":"OEjror7ovzErVFPh"}
-{"country":"USA","element":"al","timestamp":1585847460659,"_id":"UnIimF6wrirRQUFb"}
-{"country":"USA","element":"all","timestamp":1585847409719,"_id":"WIqdwP8rS9INPZwo"}
-{"country":"USA","element":"al","timestamp":1585847609737,"_id":"XASDSXRjnLVFXJh8"}
-{"country":"USA","element":"al","timestamp":1585847691971,"_id":"asziLQFcEUgsHl8N"}
-{"country":"USA","element":"all","timestamp":1585847686188,"_id":"kwI2ehYT5nkyhhSE"}
-{"country":"USA","element":"all","timestamp":1585859409629,"_id":"LrfFkQhVX0hZhakS"}
-{"country":"USA","element":"al","timestamp":1585859414888,"_id":"6DzSC4d5h9XZz7Pz"}
-{"country":"USA","element":"all","timestamp":1585859420003,"_id":"G3GuQQgtf07mfVAg"}
+{"country":"Costa Rica","cases":396,"todayCases":21,"deaths":2,"todayDeaths":0,"recovered":6,"active":388,"critical":11,"casesPerOneMillion":78,"deathsPerOneMillion":0,"_id":"BSXCyelr4FsyYrw3"}
+{"country":"Costa Rica","cases":396,"todayCases":21,"deaths":2,"todayDeaths":0,"recovered":6,"active":388,"critical":11,"casesPerOneMillion":78,"deathsPerOneMillion":0,"_id":"fmOrZUSR45NNuoEY"}{"country":"Costa Rica","cases":396,"todayCases":21,"deaths":2,"todayDeaths":0,"recovered":6,"active":388,"critical":11,"casesPerOneMillion":78,"deathsPerOneMillion":0,"_id":"O3BXxLGuKTn8vdNa"}
