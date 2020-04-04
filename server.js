@@ -27,7 +27,7 @@ app.get('/ipCountry/:country', async (request, response) => {
     });
 
     const dateNow = database.find({ allDataCountriesReceived: { $exists: true } }, function (err, docs) {
-        console.log(docs[0]);
+        //console.log(docs[0]);
         response.json(docs[0]);
     });
 });

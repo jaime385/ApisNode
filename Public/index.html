@@ -4,19 +4,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./Style/style.css">
     <title>Apis Node Project</title>
 </head>
 
 <body>
-    <p>This is my Apis Node project</p>
-    <h1 id="paragraph1"></h1>
-    <div id="times"></div>
-    <form>
-        <label>Write a country:</label>
-        <input type="text" id="countryQuery" name="Country" placeholder="Costa Rica" autofocus list="countries">
-        <datalist id="countries"></datalist>
-    </form>
+    <div id="mainFrame" class="mainFrame">
+        <div id="header" class="mainFrameHeader">
+            <p>This is my Apis Node project</p>
+            <h1 id="usersCountry"></h1>
+        </div>
+        <div class="mainContent">
+            <form>
+                <label>Write a country:</label>
+                <input type="text" id="countryQuery" name="Country" placeholder="Costa Rica" autofocus list="countries">
+                <datalist id="countries"></datalist>
+            </form>
+        </div>
+        <div class="mainFooter">
+            <div id="times"></div>
+        </div>
+    </div>
     <script src="func.js"></script>
 </body>
 

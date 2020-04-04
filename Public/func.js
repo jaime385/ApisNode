@@ -6,7 +6,7 @@ async function ipData() {
     const countryToServer = await fetch(`ipCountry/${countryJson.country_name}`);
     const responseFromServer = await countryToServer.json();
     console.log(responseFromServer);
-    document.getElementById('paragraph1').textContent = countryJson.country_name;
+    document.getElementById('usersCountry').textContent = countryJson.country_name;
     for (item in responseFromServer.allDataCountriesReceived) {
         const countries = responseFromServer.allDataCountriesReceived[item].country;
         //console.log(countries);
