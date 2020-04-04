@@ -7,12 +7,12 @@ async function ipData() {
     const responseFromServer = await countryToServer.json();
     console.log(responseFromServer);
     document.getElementById('paragraph1').textContent = countryJson.country_name;
-    for (item in responseFromServer) {
-        const time = document.createElement(`div`);
-        time.setAttribute('id', `div${item}`);
-        const newDate = new Date(responseFromServer[item].dataReceived.time);
-        time.textContent = newDate;
-        const divTimes = document.getElementById('times');
-        divTimes.append(time);
+    for (item in responseFromServer.allDataCountriesReceived) {
+        const countries = responseFromServer.allDataCountriesReceived[item].country;
+        //console.log(countries);
+        const datalist = document.getElementById('countries');
+        datalistElement = document.createElement('option');
+        datalistElement.setAttribute('value', `${countries}`);
+        datalist.append(datalistElement);
     }
 }
