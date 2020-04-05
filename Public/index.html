@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c5f7a233d9.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gotu&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./Style/style.css">
     <title>Apis Node Project</title>
 </head>
@@ -11,15 +13,22 @@
 <body>
     <div id="mainFrame" class="mainFrame">
         <div id="header" class="mainFrameHeader">
-            <p>This is my Apis Node project</p>
-            <h1 id="usersCountry"></h1>
+            <div class="logoSite">
+                <i class="fas fa-server fa-lg"></i><strong> Fatal Pandemics API</strong>
+            </div>
         </div>
         <div class="mainContent">
-            <form>
-                <label>Write a country:</label>
-                <input type="text" id="countryQuery" name="Country" placeholder="Costa Rica" autofocus list="countries">
-                <datalist id="countries"></datalist>
-            </form>
+            <div class="countryTitle">
+                <h1 id="usersCountry"></h1>
+            </div>
+            <div class="countrysInput">
+                <form>
+                    <label>Write a country:</label>
+                    <input type="text" id="countryQuery" name="Country" placeholder="Costa Rica" autofocus
+                        list="countries">
+                    <datalist id="countries"></datalist>
+                </form>
+            </div>
         </div>
         <div class="mainFooter">
             <div id="times"></div>
