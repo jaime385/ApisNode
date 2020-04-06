@@ -25,14 +25,33 @@ app.get('/ipCountry/:country', async (request, response) => {
     database.insert({ timestamp, generaldataReceived, countryDataReceived, allDataCountriesReceived }, function (err, newDoc) {
         //console.log(newDoc);
     });
-
-    const dateNow = database.find({ allDataCountriesReceived: { $exists: true } }, function (err, docs) {
-        //console.log(docs[0]);
+    //The next line of code shows how one can iterate trough a object to get any desired value.
+    const dateNow = database.find({ "allDataCountriesReceived.0.country": "USA" }, function (err, docs) {
+        console.log(docs);
         response.json(docs[0]);
     });
 });
 
-app.get('search/:what', async (requestingWhat, respondingWhat) => {
-    console.log(requestingWhat.params);
-    respondingWhat.end();
+app.get('/api/:word', (request, response) => {
+    //console.log(request.params.word);
+    const dateLogs = database.find({}, function (err, docs) {
+        let timestamps = [];
+        var size = 0;
+        if (request.params.word == 'all') {
+            for (item in docs) {
+                size++;
+                timestamps[item] = docs[item].timestamp;
+            }
+            //console.log(timestamps, size);
+            response.send({
+                "Status": 'Succes',
+                "Elements": size,
+                "Times": timestamps
+            });
+        } else {
+            response.send({
+                "Status": "Not Logging"
+            });
+        }
+    });
 });

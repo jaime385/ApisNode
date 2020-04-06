@@ -1,5 +1,4 @@
-ipData();
-async function ipData() {
+async function saveData() {
     const country = await fetch('https://ipapi.co/json/');
     const countryJson = await country.json();
     console.log(countryJson.country_name);
@@ -15,4 +14,8 @@ async function ipData() {
         datalistElement.setAttribute('value', `${countries}`);
         datalist.append(datalistElement);
     }
+    const datTime = document.createElement('div');
+    const timeNow = new Date(responseFromServer.timestamp);
+    datTime.textContent = timeNow;
+    document.getElementById('body').append(datTime);
 }
