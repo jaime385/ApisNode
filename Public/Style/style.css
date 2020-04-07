@@ -11,7 +11,8 @@ body {
   height: 100%;
   width: 100%;
   border: 0;
-  background-color: white;
+  color: white;
+  font-size: 1.25rem;
 }
 
 .mainFrame {
@@ -35,7 +36,6 @@ body {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
-  background-color: lightcyan;
   -ms-grid-columns: 3% 70% 27% [end];
       grid-template-columns: 3% 70% 27% [end];
   -ms-grid-rows: 100%;
@@ -43,6 +43,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background: repeating-linear-gradient(45deg, black 1%, yellowgreen 20%) 100%/10px 10px;
 }
 
 .logoSite {
@@ -50,28 +51,52 @@ body {
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
   grid-row: 1 / end;
-  color: lightcoral;
 }
 
 .mainContent {
   display: -ms-grid;
   display: grid;
+  justify-items: center stretch;
+  place-items: center;
   grid-column: 1 / end;
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
   background-color: lightcoral;
-  -ms-grid-columns: 50% 50%;
-      grid-template-columns: 50% 50%;
-  -ms-grid-rows: 33% 33% 33% [end];
-      grid-template-rows: 33% 33% 33% [end];
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: auto auto auto [end];
+      grid-template-rows: auto auto auto [end];
+  background: repeating-linear-gradient(45deg, yellowgreen 1%, black 20%) 100%/10px 10px;
 }
 
 .countryTitle {
+  display: -ms-grid;
+  display: grid;
+  justify-items: center stretch;
+  place-items: center;
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
   grid-column: 1 / end;
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
+}
+
+.countryTitleElement1 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1/2;
+  grid-column: 1/end;
+}
+
+.countryTitleElement2 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  grid-column: 1/end;
 }
 
 .countrysInput {
@@ -86,13 +111,35 @@ body {
   display: grid;
   grid-row: 3 / end;
   grid-column: 1 / end;
-  background-color: lightgoldenrodyellow;
-  -ms-grid-columns: 25% 25% 25% 25%;
-      grid-template-columns: 25% 25% 25% 25%;
+  -ms-grid-columns: 20% 20% 20% 20% 20%;
+      grid-template-columns: 20% 20% 20% 20% 20%;
   -ms-grid-rows: 20% 20% 20% 20% 20%;
       grid-template-rows: 20% 20% 20% 20% 20%;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  background: repeating-linear-gradient(45deg, black 1%, yellowgreen 20%) 100%/10px 10px;
+}
+
+.divTimes {
+  -ms-grid-column-align: center;
+      justify-self: center;
+  vertical-align: middle;
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  grid-row: 3 / 4;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+}
+
+a {
+  background-color: black;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  background-color: yellowgreen;
 }
 /*# sourceMappingURL=style.css.map */

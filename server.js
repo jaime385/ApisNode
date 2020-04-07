@@ -25,7 +25,6 @@ app.get('/ipCountry/:country', async (request, response) => {
     database.insert({ timestamp, generaldataReceived, countryDataReceived, allDataCountriesReceived }, function (err, newDoc) {
         //console.log(newDoc);
     });
-    //The next line of code shows how one can iterate trough a object to get any desired value.
     const dateNow = database.find({ "allDataCountriesReceived.0.country": "USA" }, function (err, docs) {
         console.log(docs);
         response.json(docs[0]);
@@ -35,21 +34,24 @@ app.get('/ipCountry/:country', async (request, response) => {
 app.get('/api/:word', (request, response) => {
     //console.log(request.params.word);
     const dateLogs = database.find({}, function (err, docs) {
-        let timestamps = [];
-        var size = 0;
         if (request.params.word == 'all') {
+            var size = 0;
+            let timestamps = [];
             for (item in docs) {
                 size++;
                 timestamps[item] = docs[item].timestamp;
             }
-            //console.log(timestamps, size);
-            response.send({
+            //The next two lines of code show how to do the same time with the timestamps but using the map method instead.
+            /*const dataDatabase = docs.map(docs => docs.timestamp);
+            console.log(dataDatabase);*/
+            response.json({
                 "Status": 'Succes',
                 "Elements": size,
-                "Times": timestamps
+                "Times": timestamps /*,
+                'Map Method': dataDatabase*/
             });
         } else {
-            response.send({
+            response.json({
                 "Status": "Not Logging"
             });
         }

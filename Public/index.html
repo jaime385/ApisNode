@@ -19,7 +19,12 @@
         </div>
         <div id="body" class="mainContent">
             <div class="countryTitle">
-                <h1 id="usersCountry"></h1>
+                <div class="countryTitleElement1">
+                    <h1 id="usersCountry"></h1>
+                </div>
+                <div class="countryTitleElement2">
+                    <a href="./logs/index.html">Logs</a>
+                </div>
             </div>
             <div class="countrysInput">
                 <form>
@@ -28,13 +33,11 @@
                         list="countries">
                     <datalist id="countries"></datalist>
                 </form>
-                <button onclick="saveData()">
-                    Log Data
-                </button>
+                <button onclick="saveData()">Log Data</button>
             </div>
         </div>
         <div class="mainFooter">
-            <div id="times"></div>
+            <div id="times" class="divTimes"><i class="fab fa-github fa-2x"></i></div>
         </div>
     </div>
     <script src="./Func/func.js"></script>
