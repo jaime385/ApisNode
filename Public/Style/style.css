@@ -12,7 +12,12 @@ body {
   width: 100%;
   border: 0;
   color: white;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: top;
+  background-image: url(https://cdn.pixabay.com/photo/2020/03/19/21/35/covid-4948866_960_720.jpg);
 }
 
 .mainFrame {
@@ -20,8 +25,8 @@ body {
   display: grid;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
-  -ms-grid-rows: 20% auto 25% [end];
-      grid-template-rows: 20% auto 25% [end];
+  -ms-grid-rows: 20% auto 200px [end];
+      grid-template-rows: 20% auto 200px [end];
   grid-gap: 1px;
   position: absolute;
   width: 100%;
@@ -43,7 +48,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: repeating-linear-gradient(45deg, black 1%, yellowgreen 20%) 100%/10px 10px;
 }
 
 .logoSite {
@@ -62,17 +66,19 @@ body {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   grid-row: 2 / 3;
-  background-color: lightcoral;
   -ms-grid-columns: 100%;
       grid-template-columns: 100%;
   -ms-grid-rows: auto auto auto [end];
       grid-template-rows: auto auto auto [end];
-  background: repeating-linear-gradient(45deg, yellowgreen 1%, black 20%) 100%/10px 10px;
+  background: inherit;
+  -webkit-box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.1);
+          box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.1);
 }
 
 .countryTitle {
   display: -ms-grid;
   display: grid;
+  width: 100%;
   justify-items: center stretch;
   place-items: center;
   -ms-grid-columns: 100%;
@@ -115,7 +121,6 @@ body {
       grid-template-columns: 20% 20% 20% 20% 20%;
   -ms-grid-rows: 20% 20% 20% 20% 20%;
       grid-template-rows: 20% 20% 20% 20% 20%;
-  background: repeating-linear-gradient(45deg, black 1%, yellowgreen 20%) 100%/10px 10px;
 }
 
 .divTimes {
@@ -128,18 +133,31 @@ body {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
+  color: white;
 }
 
-a {
+.divTime:hover {
+  color: rgba(0, 0, 0, 0.5);
+  background-color: white;
+}
+
+.buttons {
   background-color: black;
   color: white;
-  padding: 14px 25px;
+  padding: 14px 45px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  font-size: 1.5rem;
+  border-radius: 5px;
 }
 
-a:hover {
-  background-color: yellowgreen;
+.buttons:hover {
+  color: black;
+  background-color: white;
+}
+
+.divTimes:hover {
+  color: rgba(0, 0, 0, 0.5);
 }
 /*# sourceMappingURL=style.css.map */

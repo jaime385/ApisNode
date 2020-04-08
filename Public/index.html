@@ -23,7 +23,7 @@
                     <h1 id="usersCountry"></h1>
                 </div>
                 <div class="countryTitleElement2">
-                    <a href="./logs/index.html">Logs</a>
+                    <a class="buttons" href="./logs/index.html">Logs</a>
                 </div>
             </div>
             <div class="countrysInput">
@@ -33,11 +33,15 @@
                         list="countries">
                     <datalist id="countries"></datalist>
                 </form>
-                <button onclick="saveData()">Log Data</button>
+                <button class="buttons" onclick="saveData()">Log Data</button>
             </div>
         </div>
         <div class="mainFooter">
-            <div id="times" class="divTimes"><i class="fab fa-github fa-2x"></i></div>
+            <div id="times" class="divTimes">
+                <a class="divTimes" href="https://github.com/jaime385/ApisNode">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+            </div>
         </div>
     </div>
     <script src="./Func/func.js"></script>
