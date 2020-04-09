@@ -1,5 +1,4 @@
 export {};
-
 async function saveData() {
   const country = await fetch('https://ipapi.co/json/');
   const countryJson = await country.json();
