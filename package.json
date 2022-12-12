@@ -9,7 +9,7 @@
   "author": "Jaime Brenes Rojas",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "fetch": "^1.1.0",
     "nedb": "^1.8.0",
     "node-fetch": "^2.6.0"
